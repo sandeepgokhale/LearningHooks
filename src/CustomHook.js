@@ -6,8 +6,11 @@ export const useFetch = url => {
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
-      .then(data => setData(data))
-      .error(error => sethasError(true));
+      .then(data => {
+        console.log(data);
+        setData(dta);
+      })
+      .catch(error => sethasError(true));
   });
   return {
     data,
